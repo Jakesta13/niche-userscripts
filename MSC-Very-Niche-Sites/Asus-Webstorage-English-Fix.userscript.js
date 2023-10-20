@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         Add English Language Parameter to personal.webstorage
-// @namespace    ChatGPT
+// @name         Add English Language Parameter to https://personal.asuswebstorage.com/
+// @namespace    ChatGPT/jakesta13 edited
 // @author       ChatGPT
-// @version      1.0
-// @description  Adds "?lang=en" to the URL of personal.webstorage.com
-// @match        https://personal.webstorage.com/*
+// @version      1.1
+// @description  Adds "?lang=en" to the URL of https://personal.asuswebstorage.com/
+// @match        https://personal.asuswebstorage.com/*
 // @grant        none
 // ==/UserScript==
 
