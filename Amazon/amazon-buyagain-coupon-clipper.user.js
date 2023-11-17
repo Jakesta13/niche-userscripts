@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  Clicks on checkboxes on the Amazon Buy Again page with a specific aria-label pattern (coupons)
 // @author       ChatGPT
-// @match        https://www.amazon.ca/gp/buyagain/*
+// @match        https://www.amazon.ca/gp/buyagain*
 // @grant        none
 // ==/UserScript==
 
