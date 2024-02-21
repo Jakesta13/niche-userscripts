@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      1.0
+// @version      1.1
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -37,6 +37,7 @@
                 removeElementById('chat_upsell_bubble_icon');
                 removeElementById('b-scopeListItem-conv');
                 removeElementById('pag_chat_btn');
+				removeElementById('b_bnp_bopc');
 
                 // Remove elements by class name
                 removeElementsByClassName('b_phead_chat_link');
@@ -45,6 +46,7 @@
                 removeElementsByClassName('rs_chat');
                 removeElementsByClassName('df_dn_content');
                 removeElementsByClassName('b_pag_lets_chat');
+				removeElementByClassName('b_bnp_bopc popup');
             }
         });
     }
