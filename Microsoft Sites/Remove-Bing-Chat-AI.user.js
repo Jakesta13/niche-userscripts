@@ -6,6 +6,7 @@
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
 // @grant        none
+// @updateURL    https://github.com/Jakesta13/niche-userscripts/raw/main/Microsoft%20Sites/Remove-Bing-Chat-AI.user.js
 // ==/UserScript==
 
 (function() {
