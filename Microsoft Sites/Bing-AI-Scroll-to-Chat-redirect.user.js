@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Say No to Bing AI scroll-to-chat
 // @namespace    ChatGPT
-// @version      1
+// @version      1.0a
 // @description  Change bing's AI scroll-toggled chat is quickly navigated away from, to asist with disabling the AI if another script fails, it makes sure that &showconv= is set to "0" and update it immediately if it changes to "1"
 // @author       ChatGPT / jakesta13
 // @match        https://www.bing.com/*
 // @grant        none
 // @updateURL    https://github.com/Jakesta13/niche-userscripts/raw/main/Microsoft%20Sites/Bing-AI-Scroll-to-Chat-redirect.user.js
+// @downloadURL  https://github.com/Jakesta13/niche-userscripts/raw/main/Microsoft%20Sites/Bing-AI-Scroll-to-Chat-redirect.user.js
 // ==/UserScript==
 
 (function() {
