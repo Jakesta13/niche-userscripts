@@ -68,6 +68,7 @@
                 removeElementsByClassName('below_sbox');
                 // Breaks menu-bar on bing.com home page, but you don't *NEED* them, will attempt to resolve it in future updates 
                 removeElementsByClassName('scope ');
+                removeElementsByClassName('cdxConv')
             }
         });
     }
