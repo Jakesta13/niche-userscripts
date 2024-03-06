@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      1.2b
+// @version      1.3
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -9,7 +9,9 @@
 // @updateURL    https://github.com/Jakesta13/niche-userscripts/raw/main/Microsoft%20Sites/Remove-Bing-Chat-AI.user.js
 // @downloadURL  https://github.com/Jakesta13/niche-userscripts/raw/main/Microsoft%20Sites/Remove-Bing-Chat-AI.user.js
 // ==/UserScript==
-
+// Known issues:
+// Breaks menu-bar on bing.com home page see comment below
+// Breaks Bing rewards questions popup, will attempt to fix in future updates
 (function() {
     'use strict';
 
@@ -49,6 +51,7 @@
                 removeElementById('cib-conversation-main');
                 removeElementById('cib-chat-main');
                 removeElementById('cib-action-bar-main');
+                removeElementById('codex');
 
                 // Remove elements by class name
                 removeElementsByClassName('b_phead_chat_link');
@@ -57,12 +60,14 @@
                 removeElementsByClassName('rs_chat');
                 removeElementsByClassName('df_dn_content');
                 removeElementsByClassName('b_pag_lets_chat');
-				removeElementByClassName('b_bnp_bopc popup');
-                removeElemntByClassName('b_bnp_btn b_bnp_cta');
-                removeElementByClassName('cib-serp-main');
-                removeElementByClassName('cib-background');
-                
-                
+				removeElementsByClassName('b_bnp_bopc popup');
+                removeElementsByClassName('b_bnp_btn b_bnp_cta');
+                removeElementsByClassName('cib-serp-main');
+                removeElementsByClassName('cib-background');
+                removeElementsByClassName('cdxPrompt  ');
+                removeElementsByClassName('below_sbox');
+                // Breaks menu-bar on bing.com home page, but you don't *NEED* them, will attempt to resolve it in future updates 
+                removeElementsByClassName('scope ');
             }
         });
     }
