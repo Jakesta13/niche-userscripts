@@ -52,6 +52,25 @@
                 removeElementById('cib-chat-main');
                 removeElementById('cib-action-bar-main');
                 removeElementById('codex');
+                removeElementById('qs_chatBox');
+                removeElementById('qs_chatIconOuter');
+                removeElementById('qs_chatIconInner');
+                removeElementById('sydneyLetsChatWidgetContainer');
+                removeElementById('b_syd_sm_input');
+                removeElementById('syd_suggestion_wrapper');
+                removeElementById('b_syd_text_input_container');
+                removeElementById('b_syd_sm_tb');
+                removeElementById('b_syd_mic');
+                removeElementById('b_syd_inputs');
+                removeElementById('b_syd_mic_ingress');
+                removeElementById('b_syd_send');
+                removeElementById('b_syd_kb');
+                removeElementById('sydneyLetsChatWidgetCtaBtn');
+                removeElementById('sydneyLetsChatWidgetGradient');
+                // Removes Deep Search
+                removeElementById('b_sh_btn');
+                removeElementById('b_sh_btn_icon');
+                removeElementById('b_sh_btn_text');
 
                 // Remove elements by class name
                 removeElementsByClassName('b_phead_chat_link');
@@ -68,7 +87,12 @@
                 removeElementsByClassName('below_sbox');
                 // Breaks menu-bar on bing.com home page, but you don't *NEED* them, will attempt to resolve it in future updates 
                 removeElementsByClassName('scope ');
-                removeElementsByClassName('cdxConv')
+                removeElementsByClassName('cdxConv');
+                ///
+                removeElementsByClassName('b_wpt_override');
+                removeElementsByClassName('b_syd_textarea_container');
+                removeElementsByClassName('b_widgetContainer slide-in');
+                removeElementsByClassName('b_widgetGrad');
             }
         });
     }
