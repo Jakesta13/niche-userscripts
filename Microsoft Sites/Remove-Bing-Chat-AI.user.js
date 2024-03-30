@@ -14,6 +14,17 @@
 // Breaks Bing rewards questions popup, will attempt to fix in future updates
 (function() {
     'use strict';
+    // Function to disable co-pilot responce toggle if it is ON (Will refresh)
+    function clickElementIfOn() {
+        var labelElement = document.getElementById('dtsetting_toggleChat_label');
+        if (labelElement && labelElement.textContent.trim() === 'On') {
+            var ctrlElement = document.getElementById('dtsetting_toggleChat_ctrl');
+            if (ctrlElement) {
+                ctrlElement.click();
+            }
+        }
+    }
+    
 
     // Function to remove an element by ID
     function removeElementById(elementId) {
@@ -93,6 +104,10 @@
                 removeElementsByClassName('b_syd_textarea_container');
                 removeElementsByClassName('b_widgetContainer slide-in');
                 removeElementsByClassName('b_widgetGrad');
+
+                // Toggle the co-pilot responce in results
+                // Will cause page to refresh, disable if causes issues
+                clickElementIfOn();
             }
         });
     }
