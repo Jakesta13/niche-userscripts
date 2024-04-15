@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      1.5
+// @version      1.6
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -15,16 +15,25 @@
 (function() {
     'use strict';
     // Function to disable co-pilot responce toggle if it is ON (Will refresh)
-    function clickElementIfOn() {
-        var labelElement = document.getElementById('dtsetting_toggleChat_label');
-        if (labelElement && labelElement.textContent.trim() === 'On') {
-            var ctrlElement = document.getElementById('dtsetting_toggleChat_ctrl');
-            if (ctrlElement) {
-                ctrlElement.click();
+    function toggleOFFResponce() {
+        var toggleChatLabel = document.getElementById('dtsetting_toggleChat_label');
+        if (toggleChatLabel && toggleChatLabel.textContent.trim() === 'On') {
+            var ToggleResponces = document.getElementById('dtsetting_toggleChat_ctrl');
+            if (ToggleResponces) {
+                ToggleResponces.click();
             }
         }
     }
-    
+    // Function to disable co-pilot scroll to chat toggle if it is ON
+    function toggleOFFCoPilotScroll() {
+        var toggleScrollLabel = document.getElementById('dtsetting_toggleScroll_label');
+        if (toggleScrollLabel && toggleScrollLabel.textContent.trim() === 'On') {
+            var ToggleScroll = document.getElementById('dtsetting_toggleScroll_ctrl');
+            if (ToggleScroll) {
+                ToggleScroll.click();
+            }
+        }
+    }
 
     // Function to remove an element by ID
     function removeElementById(elementId) {
@@ -109,7 +118,9 @@
 
                 // Toggle the co-pilot responce in results
                 // Will cause page to refresh, disable if causes issues
-                clickElementIfOn();
+                toggleOFFResponce();
+                // Toggle the co-pilot scroll to chat
+                toggleOFFCoPilotScroll();
             }
         });
     }
