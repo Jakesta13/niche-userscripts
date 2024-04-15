@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      1.4a.non-changes
+// @version      1.5
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -82,6 +82,7 @@
                 removeElementById('b_sh_btn');
                 removeElementById('b_sh_btn_icon');
                 removeElementById('b_sh_btn_text');
+                removeElementsByClassName('b_phead_sh_link');
 
                 // Remove elements by class name
                 removeElementsByClassName('b_phead_chat_link');
@@ -104,6 +105,7 @@
                 removeElementsByClassName('b_syd_textarea_container');
                 removeElementsByClassName('b_widgetContainer slide-in');
                 removeElementsByClassName('b_widgetGrad');
+                removeElementsByClassName('cdxConv insideSbox');
 
                 // Toggle the co-pilot responce in results
                 // Will cause page to refresh, disable if causes issues
