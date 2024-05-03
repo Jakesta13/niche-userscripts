@@ -87,6 +87,7 @@
                 removeElementById('b_syd_kb');
                 removeElementById('sydneyLetsChatWidgetCtaBtn');
                 removeElementById('sydneyLetsChatWidgetGradient');
+                removeElementById('b_sydtgload');
                 // Removes Deep Search
                 removeElementById('b_sh_btn');
                 removeElementById('b_sh_btn_icon');
