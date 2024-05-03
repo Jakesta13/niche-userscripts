@@ -116,6 +116,7 @@
                 removeElementsByClassName('b_widgetContainer slide-in');
                 removeElementsByClassName('b_widgetGrad');
                 removeElementsByClassName('cdxConv insideSbox');
+                removeElementsByClassName('b_slidesContainer');
 
                 // Toggle the co-pilot responce in results
                 // Will cause page to refresh, disable if causes issues
