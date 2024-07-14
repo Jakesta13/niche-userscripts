@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      1.9
+// @version      1.9a
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -97,6 +97,7 @@
                 removeElementById('df_listaa');
                 
                 removeElementById('assyc');
+                removeElementById('sa_zis_Banner');
 
                 // Remove elements by class name
                 removeElementsByClassName('b_phead_chat_link');
