@@ -5,6 +5,7 @@
 // @description  Redirects to Ninite Pro interface if "Signed in as" is found
 // @author       ChatGPT
 // @match        https://ninite.com/
+// @match        https://ninite.com/welcome
 // @grant        none
 // ==/UserScript==
 
