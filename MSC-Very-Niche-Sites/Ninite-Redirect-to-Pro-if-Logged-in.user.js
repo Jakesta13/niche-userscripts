@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Redirect to Ninite Pro
 // @namespace    ChatGPT
-// @version      1.0
+// @version      2.0
 // @description  Redirects to Ninite Pro interface if "Signed in as" is found
 // @author       ChatGPT
 // @match        https://ninite.com/
 // @match        https://ninite.com/welcome
+// @updateURL https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/MSC-Very-Niche-Sites/Ninite-Redirect-to-Pro-if-Logged-in.user.js
+// @downloadURL https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/MSC-Very-Niche-Sites/Ninite-Redirect-to-Pro-if-Logged-in.user.js
 // @grant        none
 // ==/UserScript==
 
