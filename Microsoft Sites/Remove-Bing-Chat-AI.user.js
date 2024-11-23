@@ -125,6 +125,8 @@
                 removeElementsByClassName('wd-pn');
                 removeElementsByClassName('sdbtn');
                 removeElementsByClassName('sdbt wd-btn-rot');
+                // Removes "open copilot" icon next to search box
+                removeElementsByClassName('cdxConv_slsboxl');
 
 
                 // Toggle the co-pilot responce in results
