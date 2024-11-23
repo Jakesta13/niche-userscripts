@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         YouTube Channel Name Copier
 // @namespace    http://youtube.com
-// @version      1.0
+// @version      1.0.1
 // @description  Copies channel names to clipboard, can be used for organizing externally
 // @author       ChatGPT / Jakesta13
-// @match        https://www.youtube.com/feed/channels*
+// @match        https://www.youtube.com/feed/channels
 // @grant        none
 // @updateURL    https://github.com/Jakesta13/niche-userscripts/raw/main/Youtube/Youtube-Channel-List-Grabber.user.js
 // @downloadURL  https://github.com/Jakesta13/niche-userscripts/raw/main/Youtube/Youtube-Channel-List-Grabber.user.js
