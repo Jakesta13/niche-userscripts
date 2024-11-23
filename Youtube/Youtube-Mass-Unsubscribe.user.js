@@ -100,7 +100,7 @@
     button.textContent = 'Bulk Unsubscribe';
     button.style.position = 'fixed';
     button.style.top = '20px';
-    button.style.right = '20px';
+    button.style.right = '40px';
     button.style.zIndex = '9999';
   
     // Add a click event listener to the button
