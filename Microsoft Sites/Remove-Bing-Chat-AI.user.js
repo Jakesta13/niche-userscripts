@@ -99,6 +99,13 @@
                 removeElementById('assyc');
                 removeElementById('sa_zis_Banner');
 
+                // AI Responce Feedback in search
+                // First lets give them an angry emoji, comment to disable
+                document.getElementById('cds_emoji_angry').click();
+                // Submit to close the popup.
+                document.getElementById('submit_button').click();
+                removeElementById('survey-opt-in-wrapper');
+
                 // Remove elements by class name
                 removeElementsByClassName('b_phead_chat_link');
                 removeElementsByClassName('scp_conv_mode');
