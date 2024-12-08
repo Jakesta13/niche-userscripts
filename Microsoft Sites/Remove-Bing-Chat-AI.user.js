@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      1.10
+// @version      2.0
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -34,7 +34,24 @@
             }
         }
     }
-
+    // Function to disable News on the home screen
+    function toggleOFFNews() {
+        var ToggleNews = document.getElementById('qs_carousel_ctrl');
+      if (ToggleNews){
+        if (ToggleNews.getAttribute('aria-checked') === 'true') {
+            ToggleNews.click();
+        }
+      }
+    }
+    // Function to disable trending on home screen
+    function toggleOFFTrend() {
+        var ToggleTrend = document.getElementById('qs_tobbs_ctrl');
+        if (ToggleTrend){
+          if (ToggleTrend.getAttribute('aria-checked') === 'true') {
+             ToggleTrend.click();
+          }
+        }
+    }
     // Function to remove an element by ID
     function removeElementById(elementId) {
         var element = document.getElementById(elementId);
@@ -50,9 +67,17 @@
             elements[0].parentNode.removeChild(elements[0]);
         }
     }
-
+    let menuAlreadyOpened = 0;
     // Function to handle mutations and remove elements
     function handleMutations(mutations) {
+      // We don't want to keep clicking the menu bar to open.
+      // This is so that we expose the elements for toggling settings that only appear as elements
+      // when the menu is opened.
+        if ( menuAlreadyOpened = 0 ){
+        document.querySelector('[aria-label="Settings and quick links"]').click();
+          menuAlreadyOpened++;
+        };
+      
         mutations.forEach(function(mutation) {
             // Check if nodes were added
             if (mutation.addedNodes.length > 0) {
@@ -95,16 +120,22 @@
                 removeElementsByClassName('b_phead_sh_link');
                 // Removes "People Also search"
                 removeElementById('df_listaa');
-                
+
                 removeElementById('assyc');
                 removeElementById('sa_zis_Banner');
 
+                // // // //
                 // AI Responce Feedback in search
                 // First lets give them an angry emoji, comment to disable
+              if (document.getElementById('cds_emoji_angry')){
                 document.getElementById('cds_emoji_angry').click();
                 // Submit to close the popup.
                 document.getElementById('submit_button').click();
+            };
                 removeElementById('survey-opt-in-wrapper');
+              // // // //
+                // Remove's the Feedback button
+                removeElementById('sb_feedback');
 
                 // Remove elements by class name
                 removeElementsByClassName('b_phead_chat_link');
@@ -119,7 +150,7 @@
                 removeElementsByClassName('cib-background');
                 removeElementsByClassName('cdxPrompt  ');
                 removeElementsByClassName('below_sbox');
-                // Breaks menu-bar on bing.com home page, but you don't *NEED* them, will attempt to resolve it in future updates 
+                // Breaks menu-bar on bing.com home page, but you don't *NEED* them, will attempt to resolve it in future updates
                 removeElementsByClassName('scope ');
                 removeElementsByClassName('cdxConv');
                 ///
@@ -134,17 +165,21 @@
                 removeElementsByClassName('sdbt wd-btn-rot');
                 // Removes "open copilot" icon next to search box
                 removeElementsByClassName('cdxConv_slsboxl');
-
+                // Removes Trivia quiz on the home screen, which was recently added.
+                removeElementsByClassName('hp_trivia_outer');
 
                 // Toggle the co-pilot responce in results
-                // Will cause page to refresh, disable if causes issues
                 toggleOFFResponce();
                 // Toggle the co-pilot scroll to chat
                 toggleOFFCoPilotScroll();
+                // Toggle News on Home Page
+                toggleOFFNews();
+                // Toggle trending on Home Page
+                toggleOFFTrend();
+
             }
         });
     }
-
     // Create a mutation observer
     var observer = new MutationObserver(handleMutations);
 
