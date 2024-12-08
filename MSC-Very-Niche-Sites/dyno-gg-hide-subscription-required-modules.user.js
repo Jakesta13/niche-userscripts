@@ -5,6 +5,8 @@
 // @author       Gemini
 // @match        https://dyno.gg/manage/*
 // @grant        none
+// @updateURL https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/MSC-Very-Niche-Sites/dyno-gg-hide-subscription-required-modules.user.js
+// @downloadURL https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/MSC-Very-Niche-Sites/dyno-gg-hide-subscription-required-modules.user.js
 // ==/UserScript==
 // 
 // This script is not meant to prevent you from purchasing premium for dyno.gg
