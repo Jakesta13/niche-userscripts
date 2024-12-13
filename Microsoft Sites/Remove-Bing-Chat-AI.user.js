@@ -123,6 +123,8 @@
 
                 removeElementById('assyc');
                 removeElementById('sa_zis_Banner');
+                // "See More"
+                removeElementById('b_mtp');
 
                 // // // //
                 // AI Responce Feedback in search
