@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      2.1
+// @version      2.2
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -169,6 +169,8 @@
                 removeElementsByClassName('cdxConv_slsboxl');
                 // Removes Trivia quiz on the home screen, which was recently added.
                 removeElementsByClassName('hp_trivia_outer');
+                // Removes Rsponse to search query
+                removeElementsByClassName('b_ans b_top b_topborder b_qnacdxcont');
 
                 // Toggle the co-pilot responce in results
                 toggleOFFResponce();
