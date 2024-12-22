@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name        No Bing Player
-// @version     1.3
+// @version     1.4
 // @description Bypasses Bing's video player and redirects to the direct video source.
 // @author      Gemini / jakesta13
 // @match       https://www.bing.com/videos/riverview/relatedvideo*
 // @match       https://www.bing.com/videos/*
+// @downloadURL https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/Microsoft%20Sites/No-Bing-Player.user.js
+// @updateURL   https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/Microsoft%20Sites/No-Bing-Player.user.js
 // @grant       none
 // ==/UserScript==
 
