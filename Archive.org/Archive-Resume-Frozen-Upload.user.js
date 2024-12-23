@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Archive.org Auto-Resume Upload
-// @version      1
+// @version      1.1
 // @description  Automatically resume Archive.org uploads if the progress freezes
 // @author       ChatGPT / Gemini / Jakesta13
 // @match        https://archive.org/upload*
@@ -38,6 +38,8 @@
             console.log('Upload resumed successfully.');
           } else {
             console.warn('IA_UPLOADER function not found. Resuming upload might not work.');
+            console.log('Trying anyways');
+            window.IA_UPLOADER.resume();
           }
         }
   

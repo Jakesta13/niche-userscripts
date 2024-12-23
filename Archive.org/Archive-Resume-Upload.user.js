@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Archive Upload Resume
-// @version      2
+// @version      2.1
 // @description  Automatically resumes failed archive.org uploads
 // @author       ChatGPT / Gemini / Jakesta13
 // @match        https://archive.org/upload/*
@@ -23,6 +23,8 @@
         console.log('Upload resumed successfully.');
       } else {
         console.warn('IA_UPLOADER function not found. Resuming upload might not work.');
+        console.log('Trying anyways');
+        window.IA_UPLOADER.resume();
       }
 
       // Schedule a reload after 5 seconds to check upload status
