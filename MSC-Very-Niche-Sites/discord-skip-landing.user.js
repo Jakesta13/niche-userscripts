@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Discord Direct to App
-// @namespace    https://github.com/jakesta13
-// @version      0.8
+// @namespace    https://github.com/Jakesta13
+// @version      1.0
 // @description  Automatically navigates to Discord chat if logged in (with redundancy check using data-testid and MutationObserver).
 // @author       Gemini, Jakesta13
 // @match        https://discord.com/
 // @grant        none
+// @updateURL    https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/MSC-Very-Niche-Sites/discord-skip-landing.user.js  // Update URL points to your script location
+// @downloadURL  https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/MSC-Very-Niche-Sites/discord-skip-landing.user.js  // Download URL points to your script location
 // ==/UserScript==
 
 (function() {
