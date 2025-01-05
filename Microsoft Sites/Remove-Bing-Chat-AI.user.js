@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      2.2
+// @version      3.0
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -14,13 +14,30 @@
 // Breaks Bing rewards questions popup, will attempt to fix in future updates
 (function() {
     'use strict';
-    // Function to disable co-pilot responce toggle if it is ON (Will refresh)
+    // Setting variable to use as a suffix for console messages
+    let scriptName = "Remove Bing Chat AI"
+    // Function to call when we want to send a message to console
+    function sendToConsole(log){
+      console.info("[" + scriptName + "] " + log);
+    }
+    // All I did was search "ChatGPT" and all these Elements came up (See Named Section "ChatGPT Search Caused" for areas of the script that needed to be added in order to stop the AI from bugging you to use it vs ChatGPT)
+    // ChatGPT Search Caused Part1:
+    function coPilotSearchInlineChat() {
+        var coPilotInlineChat = document.getElementById('uaclose');
+      if (coPilotInlineChat){
+        coPilotInlineChat.click();
+            sendToConsole("Clicked Close on the Co-Pilot box");
+        }
+    }
+    // End Section for "ChatGPT Search Caused Part1"
+    // Function to disable co-pilot responce toggle if it is ON (May sometimes cause a refresh, doesn't seem to happen anymore)
     function toggleOFFResponce() {
         var toggleChatLabel = document.getElementById('dtsetting_toggleChat_label');
         if (toggleChatLabel && toggleChatLabel.textContent.trim() === 'On') {
             var ToggleResponces = document.getElementById('dtsetting_toggleChat_ctrl');
             if (ToggleResponces) {
                 ToggleResponces.click();
+                sendToConsole("Toggled OFF Co-Pilot Responces in Settings");
             }
         }
     }
@@ -31,6 +48,7 @@
             var ToggleScroll = document.getElementById('dtsetting_toggleScroll_ctrl');
             if (ToggleScroll) {
                 ToggleScroll.click();
+                sendToConsole("Toggled OFF Co-Pilot Scroll to Chat in Settings");
             }
         }
     }
@@ -40,6 +58,7 @@
       if (ToggleNews){
         if (ToggleNews.getAttribute('aria-checked') === 'true') {
             ToggleNews.click();
+            sendToConsole("Toggled OFF News in Settings");
         }
       }
     }
@@ -49,6 +68,7 @@
         if (ToggleTrend){
           if (ToggleTrend.getAttribute('aria-checked') === 'true') {
              ToggleTrend.click();
+             sendToConsole("Toggled OFF Trending in settings");
           }
         }
     }
@@ -57,6 +77,8 @@
         var element = document.getElementById(elementId);
         if (element) {
             element.parentNode.removeChild(element);
+            sendToConsole("Removed element ID: " + elementId);
+//            sendToConsole("To-Do Add descriptions to what '" + elementId + "' is.");
         }
     }
 
@@ -65,6 +87,8 @@
         var elements = document.getElementsByClassName(className);
         while (elements.length > 0) {
             elements[0].parentNode.removeChild(elements[0]);
+            sendToConsole("Removed element className: " + elements[0].parentNode);
+//            sendToConsole("To-Do Add descriptions to what '" + elements[0].parentNode + "' is.");
         }
     }
     let menuAlreadyOpened = 0;
@@ -74,10 +98,12 @@
       // This is so that we expose the elements for toggling settings that only appear as elements
       // when the menu is opened.
         if ( menuAlreadyOpened = 0 ){
-        document.querySelector('[aria-label="Settings and quick links"]').click();
+          document.querySelector('[aria-label="Settings and quick links"]').click();
+          //Added console output for both debugging and because it helps the user understand if they see the menu open and don't know why
+          sendToConsole("Clicked on the menu bar to allow us to access the settings to configure the home page");
           menuAlreadyOpened++;
         };
-      
+
         mutations.forEach(function(mutation) {
             // Check if nodes were added
             if (mutation.addedNodes.length > 0) {
@@ -113,32 +139,51 @@
                 removeElementById('sydneyLetsChatWidgetCtaBtn');
                 removeElementById('sydneyLetsChatWidgetGradient');
                 removeElementById('b_sydtgload');
-                // Removes Deep Search
+                // Removes Deep Search:
                 removeElementById('b_sh_btn');
                 removeElementById('b_sh_btn_icon');
                 removeElementById('b_sh_btn_text');
                 removeElementsByClassName('b_phead_sh_link');
-                // Removes "People Also search"
+                //
+                // Removes "People Also search":
                 removeElementById('df_listaa');
-
+                //
                 removeElementById('assyc');
                 removeElementById('sa_zis_Banner');
-                // "See More"
+                // "See More":
                 removeElementById('b_mtp');
-
-                // // // //
+                //
+                // All I did was search "ChatGPT" and all these Elements came up (See Named Section "ChatGPT Search Caused" for areas of the script that needed to be added in order to stop the AI from bugging you to use it vs ChatGPT)
+                // ChatGPT Search Caused:
+                // First, Click close, and then we will clean up any of the found elements.
+                coPilotSearchInlineChat();
+                //
+                removeElementById('unarfo');
+                removeElementById('b_cp_upsell');
+                removeElementById('cp_logo');
+                removeElementById('sbBoxCnt');
+                removeElementById('uaForm');
+                removeElementById('uaseabox');
+                removeElementById('uaseabtn');
+                removeElementById('uanotice');
+                removeElementById('uaanswer');
+                // End Section for "ChatGPT Search Caused"
+                // - // - // - //
                 // AI Responce Feedback in search
                 // First lets give them an angry emoji, comment to disable
-              if (document.getElementById('cds_emoji_angry')){
-                document.getElementById('cds_emoji_angry').click();
-                // Submit to close the popup.
-                document.getElementById('submit_button').click();
-            };
+                if (document.getElementById('cds_emoji_angry')){
+                    document.getElementById('cds_emoji_angry').click();
+                    sendToConsole("Gave Bing an angry emoji")
+                    // Submit to close the popup.
+                    document.getElementById('submit_button').click();
+                    sendToConsole("Also closed the popup where we sent the angry emoji")
+                };
                 removeElementById('survey-opt-in-wrapper');
-              // // // //
-                // Remove's the Feedback button
+                // - // - // - //
+                // Removes the Feedback button
                 removeElementById('sb_feedback');
-
+                //
+                //// - //// - ////
                 // Remove elements by class name
                 removeElementsByClassName('b_phead_chat_link');
                 removeElementsByClassName('scp_conv_mode');
@@ -155,7 +200,7 @@
                 // Breaks menu-bar on bing.com home page, but you don't *NEED* them, will attempt to resolve it in future updates
                 removeElementsByClassName('scope ');
                 removeElementsByClassName('cdxConv');
-                ///
+                //
                 removeElementsByClassName('b_wpt_override');
                 removeElementsByClassName('b_syd_textarea_container');
                 removeElementsByClassName('b_widgetContainer slide-in');
@@ -167,20 +212,35 @@
                 removeElementsByClassName('sdbt wd-btn-rot');
                 // Removes "open copilot" icon next to search box
                 removeElementsByClassName('cdxConv_slsboxl');
-                // Removes Trivia quiz on the home screen, which was recently added.
+                //
+                // Removes Trivia quiz on the home screen, which was recently added.               
                 removeElementsByClassName('hp_trivia_outer');
-                // Removes Rsponse to search query
+                //
+                // Removes Response to search query
                 removeElementsByClassName('b_ans b_top b_topborder b_qnacdxcont');
-
+                //
+                // All I did was search "ChatGPT" and all these Elements came up (See Named Section "ChatGPT Search Caused" for areas of the script that needed to be added in order to stop the AI from bugging you to use it vs ChatGPT)
+                // ChatGPT Search Caused Part2:
+                removeElementsByClassName('uncon');
+                removeElementsByClassName('b_poleContent');
+                removeElementsByClassName('b_pole');
+                // End Section for "ChatGPT Search Caused Part2"
+                //
+                // Toggles Section \\ - Comment out to disable each for now, I plan on figuring out how to add options for ViolentMonkey
+                //
                 // Toggle the co-pilot responce in results
                 toggleOFFResponce();
+                //
                 // Toggle the co-pilot scroll to chat
                 toggleOFFCoPilotScroll();
+                //
                 // Toggle News on Home Page
                 toggleOFFNews();
+                //
                 // Toggle trending on Home Page
                 toggleOFFTrend();
-
+                //
+                // End Toggles Section \\
             }
         });
     }
