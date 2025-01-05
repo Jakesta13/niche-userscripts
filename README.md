@@ -15,5 +15,7 @@ All I would need is
 * A screenshot **of** the placement    
 * Entire element **or** element ID/Classes.
 * If there's anything also to click such as X boxes, include the entire element **or** Element ID/Classes and specify.     
-* > Element ID: id="element ID"    
+ > Element ID: id="element ID"    
  > Classes: class="classes"
+
+<sub>I'm also thinking about making a userscript to tackle Gemini on Google Search</sub>
