@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      3.0
+// @version      3.1
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -87,7 +87,7 @@
         var elements = document.getElementsByClassName(className);
         while (elements.length > 0) {
             elements[0].parentNode.removeChild(elements[0]);
-            sendToConsole("Removed element className: " + elements[0].parentNode);
+            sendToConsole("Removed element className: " + className);
 //            sendToConsole("To-Do Add descriptions to what '" + elements[0].parentNode + "' is.");
         }
     }
