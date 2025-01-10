@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      3.2
+// @version      3.3
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -97,16 +97,22 @@
       // We don't want to keep clicking the menu bar to open.
       // This is so that we expose the elements for toggling settings that only appear as elements
       // when the menu is opened.
-        if ( menuAlreadyOpened = 0 ){
+        if ( menuAlreadyOpened === 0 ){
           document.querySelector('[aria-label="Settings and quick links"]').click();
           //Added console output for both debugging and because it helps the user understand if they see the menu open and don't know why
           sendToConsole("Clicked on the menu bar to allow us to access the settings to configure the home page");
           menuAlreadyOpened++;
-        };
-
+        }
         mutations.forEach(function(mutation) {
             // Check if nodes were added
             if (mutation.addedNodes.length > 0) {
+              // Partial ID matches thing. Script re-write is possible, old methods are quickly becoming ineficient.
+              var genIDs = document.querySelectorAll('[id^="genId"]');
+              if (genIDs.length > 0){
+                genIDs.forEach(genID => {
+                  removeElementById(genID.id);
+                })
+              }
                 // Remove elements by ID
                 removeElementById('b_phead_chat');
                 removeElementById('chat_upsell_bubble_icon');
@@ -214,11 +220,12 @@
                 // Removes "open copilot" icon next to search box
                 removeElementsByClassName('cdxConv_slsboxl');
                 //
-                // Removes Trivia quiz on the home screen, which was recently added.               
+                // Removes Trivia quiz on the home screen, which was recently added.
                 removeElementsByClassName('hp_trivia_outer');
                 //
                 // Removes Response to search query
                 removeElementsByClassName('b_ans b_top b_topborder b_qnacdxcont');
+                removeElementsByClassName('b_ans b_top b_topborder')
                 //
                 // All I did was search "ChatGPT" and all these Elements came up (See Named Section "ChatGPT Search Caused" for areas of the script that needed to be added in order to stop the AI from bugging you to use it vs ChatGPT)
                 // ChatGPT Search Caused Part2:
