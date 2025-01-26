@@ -1,11 +1,13 @@
 // ==UserScript==
-// @name        Patreon DMs only no Chat
+// @name        Patreon Redirect to DMs
 // @namespace   https://github.com/jakesta13
 // @match       https://www.patreon.com/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Jakesta13 / ChatGPT
 // @description Reirects you to the DMs instead of the wildly unused chats on patreon. Also changes the chat icon to a mail icon (or at least my attempt to... looks like a house ngl)
+// @downloadURL https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/MSC-Very-Niche-Sites/Patreon-Redirect-to-DMs.user.js
+// @updateURL https://github.com/Jakesta13/niche-userscripts/raw/refs/heads/main/MSC-Very-Niche-Sites/Patreon-Redirect-to-DMs.user.js
 // ==/UserScript==
 function SVG(){
     // ChatGTP was used for this function
