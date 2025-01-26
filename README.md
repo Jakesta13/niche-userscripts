@@ -19,3 +19,11 @@ All I would need is
  > Classes: class="classes"
 
 <sub>I'm also thinking about making a userscript to tackle Gemini on Google Search</sub>
+
+# Quick Notes
+Please note that there may be some userscripts here that work on paysites (E.g Patreon, or any other site with paid elements).    
+> These scripts <u>**do not** grant access to **or** help download of</u> **any** paid content.  
+Any script(s) that are for pay sites are made for QOL <small>(Quality Of Life)</small> improvements or functionality **ONLY**.    
+
+**If you have any concerns about these scripts, leave a github issue and I'll take a look**  
+<sub>Always look at the source to confirm if the script in question was altered, retain the modified code for comparison</sub>
