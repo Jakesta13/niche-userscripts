@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Bing Chat AI
 // @namespace    ChatGPT / jakesta13
-// @version      3.4
+// @version      3.5
 // @description  Remove Bing Chat AI, because we don't like being forced to use it.
 // @author       ChatGPT / jakesta13
 // @match        *://www.bing.com/*
@@ -214,6 +214,8 @@
               //
               removeElementById('b_wpt_container');
               //// - //// - ////
+              // Another answers element!?
+              removeElementById('copans_container');
               // Remove elements by class name
               removeElementsByClassName('b_phead_chat_link');
               removeElementsByClassName('scp_conv_mode');
@@ -261,6 +263,8 @@
               removeElementsByClassName('fdbk_emotion');
               removeElementsByClassName('fdbtext');
               removeElementsByClassName('fdbk_thmb_root');
+              // Another Answers Element!? (Yep, theres also a class name of same ID for that element, adding for redundancy)
+              removeElementsByClassName('copans_container');
               //
               // Toggles Section \\ - Comment out to disable each for now, I plan on figuring out how to add options for ViolentMonkey
               //
